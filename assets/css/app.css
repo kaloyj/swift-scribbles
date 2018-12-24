@@ -1,3 +1,70 @@
-body {
-    background-color: lightgray;
+@font-face {
+    font-family: Roboto-Bold;
+    src: url(../fonts/roboto-bold.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(../fonts/roboto-regular.ttf);
+}
+
+body{
+    background: linear-gradient(
+                     rgba(20,20,20, .6), 
+                     rgba(20,20,20, .6)),
+                     url("../img/main.jpg");
+    font-family: Roboto-Regular;
+}
+.container{
+    display:grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 1fr 8fr 1fr 10fr;
+    grid-template-rows: 3fr 17fr;
+    grid-template-areas:
+        ". title part part"
+        ". content content content"
+}
+
+.part{
+    grid-area: part;
+    margin-top: -5%;
+    background-color: blue;
+}
+
+.header{
+    grid-area: title;
+    font-family: Roboto-Bold;
+    color:white;
+    font-size: 40px;
+    padding-top: 5%;
+}
+
+.content{
+    grid-area: content;
+    display:grid;
+    grid-template-columns: 8fr 1fr 11fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "description . loginArea"
+
+}
+
+.content{
+    grid-area: content;
+    display:grid;
+    grid-template-columns: 8fr 11fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "description loginArea"
+}
+
+.loginArea{
+    grid-area: loginArea;
+    background-color: blue;
+    margin-bottom: -5%;
+}
+
+.description{
+    grid-area: description;
 }

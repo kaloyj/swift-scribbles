@@ -10,13 +10,29 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}
+        <div class="container">
+            {% block header %} 
+                <div class="header">
+                    swift.scribbles
+                </div>
+                <div class="part">
+                    {# this is just a filler #}
+                </div>
+            {% endblock %}
+
+            {% block content %}
+                <div class="content">
+                    {% block body %}{% endblock %}
+                </div>
+            {% endblock %}
+            {% block javascripts %}
+
             {{ encore_entry_script_tags('app') }}
 
             <!-- Renders app.js & a webpack runtime.js file
                 <script src="/build/runtime.js"></script>
                 <script src="/build/app.js"></script> -->
-        {% endblock %}
+            {% endblock %}
+        </div>
     </body>
 </html>
