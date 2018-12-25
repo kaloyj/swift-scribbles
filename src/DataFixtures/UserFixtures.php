@@ -27,6 +27,9 @@ class UserFixtures extends Fixture
                         $user,
                         'test'
         ));
+        date_default_timezone_set('Asia/Singapore');
+        $user->setCreationDate(new \DateTime());
+        $user->setModificationDate(new \DateTime());
         $manager->persist($user);
         $manager->flush();
     }

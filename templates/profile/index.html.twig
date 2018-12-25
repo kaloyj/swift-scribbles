@@ -13,6 +13,8 @@
     <ul>
         <li>Username: {{ app.user.username}}</li>
         <li>Email: {{ app.user.email}}</li>
+        <li>Account Created at: {{ app.user.creationDate | date("m/d/Y") }}</li>
+        <li>Account Modified at: {{ app.user.modificationDate |date("m/d/Y") }}</li>
     </ul>
     <p><button>Update</button></p>
 </div>
