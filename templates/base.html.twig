@@ -20,9 +20,12 @@
                 <div class="utilities">
                     {% block utilities %}
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                            <div class="profile-util">{{ app.user.username }}</div>
-                            <div class="profile-util">{{ app.user.username }}</div>
-                            <div class="feed-util">Feed</div>
+                            <div class="profile-util">
+                                <a href="{{ path('profile') }}">{{ app.user.username }}</a>
+                            </div>
+                            <div class="feed-util">
+                                <a href="{{ path('home') }}">Feed</a>
+                            </div>
                             <div class="logout-util">
                                 <a href="{{ path('app_logout') }}">Log Out</a>
                             </div>

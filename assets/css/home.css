@@ -29,21 +29,21 @@ body{
     grid-column-gap: 7px;
     grid-template-rows: auto;
     grid-template-areas:
-        "trends feed suggestions"
+        "subsection1 mainsection subsection2"
 }
 
-.trends{
-    grid-area: trends;
+.subsection1{
+    grid-area: subsection1;
     border: 1px solid blue;
 }
 
-.feed{
-    grid-area: feed;
+.mainsection{
+    grid-area: mainsection;
     border: 1px solid blue;
 }
 
-.suggestions{
-    grid-area: suggestions;
+.subsection2{
+    grid-area: subsection2;
     border: 1px solid blue;
 }
 
@@ -54,7 +54,7 @@ body{
     grid-template-columns: 2fr 2fr 2fr;
     grid-template-rows: auto;
     grid-template-areas: 
-        "profile feed logout"
+        "profile feedlink logout"
 }
 
 .profile-util{
@@ -62,7 +62,7 @@ body{
 }
 
 .feed-util{
-    grid-area: feed;
+    grid-area: feedlink;
 }
 
 .logout-util{

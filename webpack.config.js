@@ -19,6 +19,8 @@ Encore
      */
     .addEntry('app', './assets/js/app.js')
     .addEntry('home', './assets/js/home.js')
+    .addEntry('profile', './assets/js/profile.js')
+    .addEntry('blog', './assets/js/blog.js')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 

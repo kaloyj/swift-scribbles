@@ -7,8 +7,8 @@
 {% endblock %}
 
 {% block body %}
-    <div class="trends"></div>
-    <div class="feed">
+    <div class="subsection1"></div>
+    <div class="mainsection">
         <div class="example-wrapper">
             <h1>Hello {{ controller_name }}! ✅</h1>
 
@@ -18,8 +18,9 @@
                 <li>Your template at <code><a href="{{ 'templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
             </ul>
         </div>
+        <p><a href="{{ path('create_blog') }}"><button>Scribble swiftly!</button></a></p>
     </div>
-    <div class="suggestions"></div>
+    <div class="subsection2"></div>
 {% endblock %}
 
 {% block javascripts %}
