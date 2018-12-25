@@ -10,19 +10,36 @@
         {% endblock %}
     </head>
     <body>
-        <div class="container">
+    {% block container %}
+        <div class="main-container">
+    {% endblock %}
             {% block header %} 
-                <div class="header">
+                <div class="websiteName">
                     swift.scribbles
                 </div>
-                <div class="part">
-                    {# this is just a filler #}
+                <div class="utilities">
+                    {% block utilities %}
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <div class="profile-util">{{ app.user.username }}</div>
+                            <div class="profile-util">{{ app.user.username }}</div>
+                            <div class="feed-util">Feed</div>
+                            <div class="logout-util">
+                                <a href="{{ path('app_logout') }}">Log Out</a>
+                            </div>
+                        {% endif %}
+                    {% endblock %}
                 </div>
             {% endblock %}
 
             {% block content %}
-                <div class="content">
-                    {% block body %}{% endblock %}
+                <div class="main-content">
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        {% block body %}{% endblock %}
+                    {% else %}
+                        <div class="trends"></div>
+                        <div class="feed">Join the swifty scribblers to view content.</div>
+                        <div class="suggestions"></div>
+                    {% endif %}
                 </div>
             {% endblock %}
             {% block javascripts %}

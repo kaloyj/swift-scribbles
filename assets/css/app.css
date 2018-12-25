@@ -15,19 +15,19 @@ body{
                      url("../img/main.jpg");
     font-family: Roboto-Regular;
 }
-.container{
+.login-container{
     display:grid;
     width: 100vw;
     height: 100vh;
-    grid-template-columns: 1fr 8fr 1fr 10fr;
+    grid-template-columns: 1fr 8fr 1fr 3fr 3fr 3fr 1fr;
     grid-template-rows: 3fr 17fr;
     grid-template-areas:
-        ". title part part"
-        ". content content content"
+        ". title fill fill fill fill fill"
+        ". content content content content content content"
 }
 
-.part{
-    grid-area: part;
+.filler{
+    grid-area: fill;
     margin-top: -5%;
     background-color: blue;
 }
