@@ -9,14 +9,14 @@
 
 {% block body %}
 <div class="subsection1">
-    <h3> User Data </h3>
-    <ul>
-        <li>Username: {{ app.user.username}}</li>
-        <li>Email: {{ app.user.email}}</li>
-        <li>Account Created at: {{ app.user.creationDate | date("m/d/Y") }}</li>
-        <li>Account Modified at: {{ app.user.modificationDate |date("m/d/Y") }}</li>
-    </ul>
-    <a href="#"><p><button>Update</button></p></a>
+    <h3> Update User Data </h3>
+    <form>
+        <div>
+            <label>Username: </label>
+            <input type="text" name="username">
+        </div>
+        <p><button type="submit">Update</button></p>
+    </form>
 </div>
 <div class="mainsection">
     <div class="blogs">

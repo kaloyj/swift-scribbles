@@ -42,6 +42,7 @@ class User implements UserInterface
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Blog", mappedBy="Author")
+     * @ORM\OrderBy({"modificationDate" = "DESC"})
      */
     private $blogs;
 
