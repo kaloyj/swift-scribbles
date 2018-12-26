@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Update Blog: '{{ blog.title }}'{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('home') }}
+    {{ encore_entry_link_tags('blog') }}
+{% endblock %}
+
+{% block body %}
+<div class="mainsection">
+    <form action="{{ path('process_update_blog', {'blog_id' : blog.id}) }}" method="post" name="createblog">
+        <div>
+            <label>Blog Title</label>
+            <input type="text" name="blogTitle" value="{{ blog.title }}"/>
+        </div>
+        <div>
+            <label>Featured Content: </label>
+            <input type="text" name="blogFeaturedContent" value="{{ blog.featuredContent }}"/>
+        </div>
+        <div>
+            <label>Featured Photo: </label>
+            <input type="file" name="blogFeaturedPhoto" value="{{ blog.featuredPhoto }}"/>
+        </div>
+        <div>
+            <label>Content: </label>
+            <textarea name="blogContent">{{ blog.content }}</textarea>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('home') }}
+    {{ encore_entry_script_tags('blog') }}
+{% endblock %}

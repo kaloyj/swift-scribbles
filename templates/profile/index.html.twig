@@ -33,6 +33,9 @@
                             <label>Actual Content:</label>
                             <div>{{ blog.content }}</div>
                         </div>
+                        <div>
+                            <a href="{{ path('update_blog', {'blog_id': blog.id}) }}"><button>Update blog</button></a>
+                        </div>
                     </div>
                 {% endfor %}
             {% else %}
