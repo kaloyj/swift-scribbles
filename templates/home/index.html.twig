@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello {{ controller_name }}!{% endblock %}
+{% block title %}Hello {{ app.user.username }}!{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
     {{ encore_entry_link_tags('home') }}
@@ -9,14 +9,31 @@
 {% block body %}
     <div class="subsection1"></div>
     <div class="mainsection">
-        <div class="example-wrapper">
-            <h1>Hello {{ controller_name }}! ✅</h1>
-
-            This friendly message is coming from:
-            <ul>
-                <li>Your controller at <code><a href="{{ 'src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-                <li>Your template at <code><a href="{{ 'templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-            </ul>
+        <div class="messages">
+            {% if success is defined %}
+                <p>{{ success }}</p>
+            {% endif %}
+        </div>
+        <div class="blogs">
+            {% if blogs is not null %}
+                {% for blog in blogs %}
+                    <div class="blog">
+                        <h2>{{ blog.title }}</h2>
+                        <div>Author: {{ blog.author.username }}</div>
+                        <div>Date Created: {{ blog.creationDate | date("m/d/Y") }}</div>
+                        <div>
+                            <label>Featured Content</label>
+                            <div>{{ blog.featuredContent }}</div>
+                        </div>
+                        <div>
+                            <label>Actual Content</label>
+                            <div>{{ blog.content }}</div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div>No one hasn't scribbled anything, yet.</div>
+            {% endif %}
         </div>
         <p><a href="{{ path('create_blog') }}"><button>Scribble swiftly!</button></a></p>
     </div>

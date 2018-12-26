@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Blog;
 
 class HomeController extends AbstractController
 {
@@ -12,8 +13,13 @@ class HomeController extends AbstractController
      */
     public function index()
     {
+        $blog_repository = $this->getDoctrine()->getRepository(Blog::class);
+        $blogs = $blog_repository->findBy([], ['modificationDate' => 'DESC']);
+
         return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
+            'blogs' => $blogs,
         ]);
     }
+
+
 }
