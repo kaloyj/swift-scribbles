@@ -1,6 +1,10 @@
+html{
+    overflow: auto !important;
+}
 body{
     background: none !important;
-    background-color: white;
+    background-color: whitesmoke !important;
+    margin: 0;
 }
 
 .main-container{
@@ -10,19 +14,24 @@ body{
     grid-template-columns: 1fr 8fr 4fr 2fr 2fr 2fr 1fr;
     grid-template-rows: 1fr 19fr;
     grid-template-areas:
-        ". websiteName . util util util ."
+        "websiteName websiteName util util util util util"
         "maincontent maincontent maincontent maincontent maincontent maincontent maincontent"
 }
 
 .websiteName{
     grid-area: websiteName;
-    border: 1px solid black;
-    padding-top: 1%;
+    color: white;
+    font-size: 1.2em;
+    background-color: rgba(17,17,17,1);
+    height:40px;
+    padding-left: 5%;
+    padding-top: 2%;
 }
+
+
 
 .main-content{
     grid-area: maincontent;
-    border: 1px solid blue;
     margin-top: 7px;
     display: grid;
     grid-template-columns: 4fr 12fr 4fr;
@@ -34,27 +43,34 @@ body{
 
 .subsection1{
     grid-area: subsection1;
-    border: 1px solid blue;
+    box-sizing: border-box;
+    padding-left: 2%;
 }
 
 .mainsection{
     grid-area: mainsection;
-    border: 1px solid blue;
 }
 
 .subsection2{
     grid-area: subsection2;
-    border: 1px solid blue;
 }
 
 .utilities{
     grid-area: util;
-    border: 1px solid yellow;
+    color: white;
+    background-color: rgba(17,17,17,1);
     display: grid;
-    grid-template-columns: 2fr 2fr 2fr;
+    font-size: 1.2em;
+    padding-top: 2%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas: 
-        "profile feedlink logout"
+        ". . . profile feedlink logout"
+}
+
+.util > a {
+    color: white;
+    text-decoration: none;
 }
 
 .profile-util{

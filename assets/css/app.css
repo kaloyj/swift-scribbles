@@ -1,3 +1,6 @@
+html{
+    overflow: hidden;
+}
 @font-face {
     font-family: Roboto-Bold;
     src: url(../fonts/roboto-bold.ttf);
@@ -12,24 +15,24 @@ body{
     background: linear-gradient(
                      rgba(20,20,20, .6), 
                      rgba(20,20,20, .6)),
-                     url("../img/main.jpg");
+                     url("../img/sub1.jpg");
     font-family: Roboto-Regular;
 }
 .login-container{
     display:grid;
     width: 100vw;
     height: 100vh;
-    grid-template-columns: 1fr 8fr 1fr 3fr 3fr 3fr 1fr;
+    grid-template-columns: 1fr 9fr 3fr 3fr 3fr 1fr;
     grid-template-rows: 3fr 17fr;
     grid-template-areas:
-        ". title fill fill fill fill fill"
-        ". content content content content content content"
+        ". title fill fill fill fill"
+        ". content content content content content"
 }
 
 .filler{
     grid-area: fill;
     margin-top: -5%;
-    background-color: blue;
+    background-color: rgba(17, 17, 17, 1);
 }
 
 .header{
@@ -53,7 +56,7 @@ body{
 .content{
     grid-area: content;
     display:grid;
-    grid-template-columns: 8fr 11fr;
+    grid-template-columns: 9fr 10fr;
     grid-template-rows: auto;
     grid-template-areas:
         "description loginArea"
@@ -61,10 +64,98 @@ body{
 
 .loginArea{
     grid-area: loginArea;
-    background-color: blue;
+    background-color: rgba(17, 17, 17, 1);
+    align-self: stretch;
     margin-bottom: -5%;
+}
+
+.login-form{
+    background-color: white;
+    box-sizing: border-box;
+    width: 60%;
+    min-height: 300px;
+    margin-left: 20%;
+    padding-left: 5%;
+    padding-top: 2%;
+    margin-top: 10%;
+    border-radius: 10px;
+}
+
+input.form-control{
+    height: 35px;
+    box-sizing: border-box;
+    width: 90%;
+    margin-bottom: 7%;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding-left: 5%;
+}
+
+p.welcome{
+    margin-top: -5%;
+    color: gray;
+    font-size: 0.9em;
+    margin-bottom: 5%;
+}
+button.btn-submit{
+    background-color: rgba(17, 17, 17, 1);
+    color: white;
+    font-family: Roboto-Regular;
+    font-size: 1em;
+    border: none;
+    height: 35px;
+    width: 150px;
+    cursor: pointer;
 }
 
 .description{
     grid-area: description;
+    color: white;
+    margin-top: 10%;
+    box-sizing: border-box;
+    width:80%;
+    height:300px;
+}
+
+.description-content{
+    text-align: justify;
+    text-justify: inter-word;
+    box-sizing: border-box;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.registerlink{
+    margin-left: 15%;
+}
+
+input
+{
+    font-size:1em;
+    font-family: Roboto-Regular;
+}
+
+.do-btn{
+    position: fixed;
+    background-color: rgba(17, 17, 17, 1);
+    color: white;
+    font-family: Roboto-Regular;
+    font-size: 1em;
+    border: none;
+    height: 35px;
+    width: 150px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 75%;
+    margin-top: 45%;
+}
+
+.do-btn > a {
+    color: white;
+    text-decoration: none;
+}
+
+.create:hover > a, .create:hover{
+    background-color: antiquewhite;
+    color: black;
 }

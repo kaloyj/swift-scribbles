@@ -19,38 +19,73 @@
 {% block content %}
     <div class="content">
         {% block body %}
+            <div class="description">
+                <div class="description-content">
+                <p>swift.scribbles is a platform where 
+                inexperienced, amateur, or professional
+                literary-related works are exhibited 
+                towards an audience preferred by the user.
+                </p> 
+                <p>swift.scribbles allows you to:</p>
+                <ul>
+                    <li>bootstrap your digital literary-writing process,</li>
+                    <li>have stronger control over your content,</li>
+                    <li>connect with your audience faster,</li>
+                    <li>and, collaborate with other scribblers like you!</li>
+                </ul>
+            </div>
+            </div>
             <div class="loginArea">
                 <form method="post">
                     {% if error %}
                         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                     {% endif %}
 
-                    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-                    <label for="inputUsername" class="sr-only">Username</label>
-                    <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
-                    <label for="inputPassword" class="sr-only">Password</label>
-                    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-
-                    <input type="hidden" name="_csrf_token"
-                        value="{{ csrf_token('authenticate') }}"
-                    >
-
-                    {#
-                        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-                        See https://symfony.com/doc/current/security/remember_me.html
-
-                        <div class="checkbox mb-3">
-                            <label>
-                                <input type="checkbox" name="_remember_me"> Remember me
-                            </label>
+                    <div class="login-form">
+                        <h2>Sign in to swift.scribbles</h2>
+                        <p class="welcome">Collaborate with other swifty scribblers!</p>
+                        <div>
+                            <input type="text" value="{{ last_username }}" 
+                                name="username" 
+                                id="inputUsername" 
+                                class="form-control" 
+                                placeholder="Enter your username" required autofocus
+                            />
                         </div>
-                    #}
+                        <div>
+                            <input type="password" name="password" id="inputPassword" 
+                                class="form-control" 
+                                placeholder="Password" required
+                            />
+                        </div>
 
-                    <button class="btn btn-lg btn-primary" type="submit">
-                        Sign in
-                    </button>
+                        <input type="hidden" name="_csrf_token"
+                            value="{{ csrf_token('authenticate') }}"
+                        >
+
+                        {#
+                            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                            See https://symfony.com/doc/current/security/remember_me.html
+
+                            <div class="checkbox mb-3">
+                                <label>
+                                    <input type="checkbox" name="_remember_me"> Remember me
+                                </label>
+                            </div>
+                        #}
+
+                        <button class="btn-submit" type="submit">
+                            Sign in
+                        </button>
+                        <span class="registerlink">
+                            <a href="#">Be a scribbler.</a>
+                        </span>
+                    </div>
                 </form>
             </div>
         {% endblock %}
     </div>
+{% endblock %}
+
+{% block dobutton %}
 {% endblock %}

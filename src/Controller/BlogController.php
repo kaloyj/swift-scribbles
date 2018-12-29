@@ -49,8 +49,12 @@ class BlogController extends AbstractController
 
         $em->persist($created_blog);
         $em->flush();
+
+        $blog_repository = $this->getDoctrine()->getRepository(Blog::class);
+        $blogs = $blog_repository->findBy([], ['modificationDate' => 'DESC']);
         return $this->render('home/index.html.twig', [
             'success' => 'Successfully created a new blog post!',
+            'blogs' => $blogs,
         ]);
     }
 

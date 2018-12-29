@@ -9,31 +9,35 @@
 {% endblock %}
 
 {% block body %}
-<div class="mainsection">
-    <form action="{{ path('process_create_blog') }}" method="post" name="createblog">
+    <div class="subsection1">
         <div>
-            <label>Blog Title</label>
-            <input type="text" name="blogTitle"/>
+            <textarea name="blogFeaturedContent"
+                form="createblog" 
+                id="featuredContent" 
+                placeholder="Enter your featured content here ..."></textarea>
         </div>
-        <div>
-            <label>Featured Content: </label>
-            <input type="text" name="blogFeaturedContent"/>
-        </div>
-        <div>
+        <div id="featuredPhoto">
             <label>Featured Photo: </label>
-            <input type="file" name="blogFeaturedPhoto"/>
+            <input form="createblog" type="file" name="blogFeaturedPhoto"/>
         </div>
-        <div>
-            <label>Content: </label>
-            <textarea name="blogContent"></textarea>
-        </div>
-        <div>
-            <button type="submit">Submit</button>
-        </div>
-    </form>
-</div>
+    </div>
+    <div class="mainsection">
+        <form id="createblog" action="{{ path('process_create_blog') }}" method="post">
+            <div class="title-container">
+                <input type="text" id="blogTitle" name="blogTitle" placeholder="Blog Title"/>
+            </div>
+            <div>
+                <textarea name="blogContent" id="content" placeholder="Enter your content here ..."></textarea>
+            </div>
+        </form>
+    </div>
 {% endblock %}
 
+{% block dobutton %}
+    <button form="createblog" class="do-btn post" type="submit">
+        Post blog!
+    </button>
+{% endblock %}
 {% block javascripts %}
     {{ parent() }}
     {{ encore_entry_script_tags('home') }}

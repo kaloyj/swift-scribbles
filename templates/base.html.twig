@@ -20,13 +20,13 @@
                 <div class="utilities">
                     {% block utilities %}
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                            <div class="profile-util">
+                            <div class="profile-util util">
                                 <a href="{{ path('profile') }}">{{ app.user.username }}</a>
                             </div>
-                            <div class="feed-util">
+                            <div class="feed-util util">
                                 <a href="{{ path('home') }}">Feed</a>
                             </div>
-                            <div class="logout-util">
+                            <div class="logout-util util">
                                 <a href="{{ path('app_logout') }}">Log Out</a>
                             </div>
                         {% endif %}
@@ -44,6 +44,11 @@
                         <div class="suggestions"></div>
                     {% endif %}
                 </div>
+            {% endblock %}
+            {% block dobutton %}
+            <button class="do-btn create">
+                <a href="{{ path('create_blog') }}">Scribble swiftly!</a>
+            </button>
             {% endblock %}
             {% block javascripts %}
 
