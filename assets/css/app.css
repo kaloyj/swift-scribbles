@@ -1,6 +1,7 @@
 html{
     overflow: hidden;
 }
+
 @font-face {
     font-family: Roboto-Bold;
     src: url(../fonts/roboto-bold.ttf);
@@ -74,7 +75,7 @@ body{
     box-sizing: border-box;
     width: 60%;
     min-height: 300px;
-    margin-left: 20%;
+    margin-left: 22%;
     padding-left: 5%;
     padding-top: 2%;
     margin-top: 10%;
@@ -147,7 +148,7 @@ input
     cursor: pointer;
     border-radius: 10px;
     margin-left: 75%;
-    margin-top: 45%;
+    margin-top: 47%;
 }
 
 .do-btn > a {
@@ -159,3 +160,4 @@ input
     background-color: antiquewhite;
     color: black;
 }
+

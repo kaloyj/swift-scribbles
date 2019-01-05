@@ -18,11 +18,14 @@
         </div>
         <div id="featuredPhoto">
             <label>Featured Photo: </label>
-            <input form="createblog" type="file" name="blogFeaturedPhoto"/>
+            <input form="createblog" type="file" name="blogFeaturedPhoto" id="blogFeaturedPhoto"/>
+        </div>
+        <div id="photo-preview">
+            <img id="selectedImage" />
         </div>
     </div>
     <div class="mainsection">
-        <form id="createblog" action="{{ path('process_create_blog') }}" method="post">
+        <form id="createblog" action="{{ path('process_create_blog') }}" method="post" enctype="multipart/form-data">
             <div class="title-container">
                 <input type="text" id="blogTitle" name="blogTitle" placeholder="Blog Title"/>
             </div>

@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ blog.title }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('home') }}
+    {{ encore_entry_link_tags('blog') }}
+    {{ encore_entry_link_tags('detail') }}
+{% endblock %}
+
+{% block body %}
+    <div class="subsection1">
+        <div class="detail-stats">
+            <div id="detail-author">Written by {{ blog.author.username }}</div>
+            <div id="detail-creationDate">Posted on {{ blog.creationDate | date("m/d/Y")}}</div>
+            <div id="detail-modificationDate">Modified last {{ blog.modificationDate | date("m/d/Y") }}</div>
+            <div id="detail-likes">_ likes</div>
+            <div id="detail-shares">_ shares</div>
+            <div id="detail-pins">_ pins</div>
+        </div>
+    </div>
+    <div class="mainsection">
+        <div class="detail-container">
+            <div class="detail-featured">
+                {% if blog.featuredPhoto is not null %}
+                    <div class="featured-photo">
+                        <img src = "{{ asset('uploads/featuredphotos/' ~ blog.featuredPhoto) }}" />
+                    </div>
+               {% else %}
+                    <div class="featured-title-container">
+                        <div id="featuredBlogTitle">
+                            {{ blog.title}}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="blog-content">
+                <div id="blog-content-title">
+                    {{ blog.title }}
+                </div>
+                <div id="blog-content-content">
+                    {{ blog.content }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="subsection2">
+        <div class="comment-section">
+            <div>Comments from fellow scribblers:</div>
+            <div id="comment-box"></div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('home') }}
+    {{ encore_entry_script_tags('blog') }}
+{% endblock %}

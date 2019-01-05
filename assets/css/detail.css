@@ -1,0 +1,51 @@
+.detail-container{
+    display:grid;
+    grid-template-columns: 20fr;
+    grid-template-rows: 8fr 12fr;
+    grid-template-areas:
+        "featured"
+        "bC"
+}
+
+.detail-featured{
+    grid-area: featured;
+    background-color: white;
+    box-sizing: border-box;
+    width: 100%;
+    height: 450px;
+}
+
+.blog-content{
+    grid-area: bC;
+    box-sizing: border-box;
+    background-color: white;
+    width: 100%;
+    min-height: 450px;
+    margin-top: 2%;
+}
+
+#blog-content-title{
+    box-sizing: border-box;
+    font-size: 2em;
+    font-family: Roboto-Bold;
+    padding: 5% 5%;
+}
+
+#blog-content-content{
+    box-sizing: border-box;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+}
+
+.detail-stats{
+    text-align: right;
+}
+
+#comment-box{
+    box-sizing: 100%;
+    margin-top: 2%;
+    width: 90%;
+    background-color: white;
+    height: 500px;
+}

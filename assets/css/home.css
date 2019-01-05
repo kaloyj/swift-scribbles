@@ -49,6 +49,147 @@ body{
 
 .mainsection{
     grid-area: mainsection;
+    display: grid;
+    grid-template-columns: 20fr;
+    grid-template-rows: 3fr 9fr 3fr 5fr;
+    grid-template-areas:
+        "authorTab"
+        "featuredTab"
+        "menuTab"
+        "fC"
+}
+
+.author-tab{
+    grid-area: authorTab;
+    display: grid;
+    grid-template-columns: 1fr 2fr 14fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        ". pic authorName . authorEdit authorSettings";
+    align-items: center;
+}
+
+.profile-picture{
+    grid-area: pic; 
+}
+
+.edit-button{
+    grid-area: authorEdit;
+}
+
+.profile-circle{
+    box-sizing: border-box;
+    width:55%;
+    height: 40px;
+    border-radius: 60px;
+    border:none;
+    background-color: burlywood;
+}
+
+.display-name{
+    grid-area: authorName;
+    font-size: 1.25em;
+    box-sizing: border-box;
+}
+
+.author-settings{
+    grid-area: authorSettings;
+}
+
+.featured-tab{
+    grid-area: featuredTab;
+    background-color: white;
+}
+
+.featured-title-container{
+    box-sizing: border-box;
+    height: 450px;
+    width: 100%;
+    display:table;
+    text-align: center;
+}
+
+.featured-photo{
+    box-sizing: border-box;
+    height: 450px;
+    width: 100%;
+    vertical-align:middle;
+    text-align: center;
+}
+
+.featured-photo > img {
+    height: 450px;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+#featuredBlogTitle{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#featuredBlogTitle{
+    font-family: Roboto-Bold;
+    font-size: 3em;
+}
+
+.featured-photo:hover, .featured-title-container:hover{
+    background-color: rgba(17,17,17, .6);
+    color: white;
+    cursor: pointer;
+}
+
+.menu-tab{
+    grid-area: menuTab;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 15fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        ". like share pin . .";
+    font-size: 1.5em;
+}
+
+.menus{
+    box-sizing: border-box;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+.menus:hover{
+    cursor: pointer; 
+}
+.like-button{
+    grid-area: like;
+}
+
+.like-button:hover{
+    color: indianred;
+}
+
+.share-button:hover{
+    color: blue;
+}
+
+.pin-button:hover{
+    color: darkblue;
+}
+
+.share-button{
+    grid-area: share;
+}
+
+.pin-button{
+    grid-area: pin;
+}
+
+.featured-content-tab{
+    grid-area: fC;
+    box-sizing: border-box;
+    width:100%;
+    height:100px;
+    padding-left: 5%;
+    padding-top: 1%;
 }
 
 .subsection2{
@@ -61,11 +202,12 @@ body{
     background-color: rgba(17,17,17,1);
     display: grid;
     font-size: 1.2em;
-    padding-top: 2%;
+    align-items: center;
+    justify-items: center;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas: 
-        ". . . profile feedlink logout"
+        ". . profile feedlink logout ."
 }
 
 .util > a {
@@ -84,3 +226,13 @@ body{
 .logout-util{
     grid-area: logout;
 }
+
+.blog{
+    box-sizing: border-box;
+    background-color: white;
+}
+
+hr{
+    border: 1.5px solid rgba(220, 220, 220, 1);
+}
+

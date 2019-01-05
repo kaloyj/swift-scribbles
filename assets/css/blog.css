@@ -57,3 +57,18 @@ textarea#featuredContent{
     background-color: antiquewhite;
     color: coral;
 }
+
+#photo-preview{
+    box-sizing: border-box;
+    width: 100%;
+    background-color: white;
+    height: 150px;
+    margin-top: 2%;
+    vertical-align:middle; 
+    text-align:center
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
